@@ -1,4 +1,4 @@
-const EMPTY_SIMBOL = 'λ';
+export const EMPTY_SIMBOL = 'λ';
 //type AlphabetType = number[]; //type AlphabetType = Array<number>;
 export type AlphabetItemType = string;
 // export type AlphabetType = string[];
