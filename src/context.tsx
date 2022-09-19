@@ -3,12 +3,12 @@ import { word, alphabetAlgorithm, AlphabetType } from './preset';
 import { alphabetFromWord } from './utils';
 
 
-type TuringMachineStateType = {
+export type TuringMachineStateType = {
     word: AlphabetType;
     alphabet: Set<string>;
     alphabetAlgorithm: { readonly RIGHT: "r"; readonly LEFT: "l"; readonly NONE: "n"; readonly STOP: "!"; readonly EMPTY: "λ"; };
 };
-type TuringMachineContextType = [state: TuringMachineStateType, setState:Dispatch<TuringMachineStateType>] | null;
+export type TuringMachineContextType = [state: TuringMachineStateType, setState:Dispatch<TuringMachineStateType>] | null;
 
 export const TuringMachineContext = createContext<TuringMachineContextType>(null);
 
