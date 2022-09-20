@@ -19,16 +19,21 @@ export const alphabetAlgorithm = {
     EMPTY: EMPTY_SIMBOL
 } as const;
 
-export type AlgorithmRowType = {
+export type AlgorithmCellType = {
     replace:AlphabetItemType;
     carriageMove:AlphabetItemType;
     stateAction:AlphabetItemType;
 };
 
+export type AlgorithmRowType = Record<string, AlgorithmCellType>;
 export type AlgorithmType = Record<string, AlgorithmRowType>;
 
 //TODO
-export const algorithm = {
-    q1: { [alphabetAlgorithm.EMPTY]: { replace: alphabetAlgorithm.EMPTY, carriageMove: alphabetAlgorithm.NONE, stateAction: alphabetAlgorithm.STOP } },
+export const algorithm: AlgorithmType = {
+    q1: {
+        [alphabetAlgorithm.EMPTY]: { replace: alphabetAlgorithm.EMPTY, carriageMove: alphabetAlgorithm.NONE, stateAction: alphabetAlgorithm.STOP },
+        '1': { replace: '0', carriageMove: alphabetAlgorithm.RIGHT, stateAction: 'q1' },
+        '0': { replace: '1', carriageMove: alphabetAlgorithm.RIGHT, stateAction: 'q1' },
+    },
     q2: {},
 };

@@ -1,3 +1,4 @@
+import { TuringMachineContextType } from "./context";
 import { AlphabetType, EMPTY_SIMBOL } from "./preset";
 
 export const alphabetFromWord = ( word:AlphabetType ) => {
@@ -9,4 +10,9 @@ export const alphabetFromWord = ( word:AlphabetType ) => {
     );
 
     return uniq;
+};
+
+export const nextStep = (context: TuringMachineContextType): TuringMachineContextType => {
+    console.log(context);
+    return context;
 };
