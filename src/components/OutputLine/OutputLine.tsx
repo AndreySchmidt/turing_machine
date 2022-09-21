@@ -1,9 +1,11 @@
 import React, { useContext } from 'react';
-import { TuringMachineContext, TuringMachineContextType } from '../../context';
+import { TuringMachineContext } from '../../context';
+import { useTMContext } from '../../hooks/useTMContext';
 
 export const OutputLine = () => {
 
-  const context = useContext<TuringMachineContextType>(TuringMachineContext) || [];
+  // const context = useContext<TuringMachineContextType>(TuringMachineContext) || [];
+  const context = useTMContext(TuringMachineContext);
   const [ state ] = context;// const state = context[0];
 
 
