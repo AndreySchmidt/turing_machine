@@ -4,12 +4,12 @@ import { alphabetFromWord } from './utils';
 
 
 export type TuringMachineStateType = {
-    word: AlphabetType;
-    alphabet: Set<string>;
-    alphabetAlgorithm: { readonly RIGHT: "r"; readonly LEFT: "l"; readonly NONE: "n"; readonly STOP: "!"; readonly EMPTY: "λ"; };
-    algorithm: any;
-    currentWordIndex: number;
-    currentAlgorithmRow: string;
+    word?: AlphabetType;
+    alphabet?: Set<string>;
+    alphabetAlgorithm?: { readonly RIGHT: "r"; readonly LEFT: "l"; readonly NONE: "n"; readonly STOP: "!"; readonly EMPTY: "λ"; };
+    algorithm?: any;
+    currentWordIndex?: number;
+    currentAlgorithmRow?: string;
 };
 export type TuringMachineContextType = [state: TuringMachineStateType, setState:Dispatch<TuringMachineStateType>] | [];
 
@@ -21,6 +21,8 @@ export const TuringMachineProvider: FC<PropsWithChildren> = ( { children } ) => 
   const valueToProvide = useState<TuringMachineStateType>(
     { word, alphabet, alphabetAlgorithm, algorithm, currentWordIndex: 0, currentAlgorithmRow: 'q1' }
   );
+
+console.log('1');
 
   return (
     <TuringMachineContext.Provider value = { valueToProvide }>
