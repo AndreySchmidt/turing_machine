@@ -1,9 +1,17 @@
 import React from 'react';
+import { useTMContext } from '../../hooks/useTMContext';
 
 export const Alphabet = () => {
+
+const [state] = useTMContext();
+
+const arrAlphabet = state?.alphabet && Array.from(state.alphabet);
+
   return (
     <div className="App">
-        Alphabet
+        {arrAlphabet?.map((letter) => {
+          return <span key={letter}>{letter}</span>;
+        })}
     </div>
   );
 }

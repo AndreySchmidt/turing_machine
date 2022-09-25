@@ -4,8 +4,7 @@ import { useTMContext } from '../../hooks/useTMContext';
 
 export const OutputLine = () => {
 
-  // const context = useContext<TuringMachineContextType>(TuringMachineContext) || [];
-  const context = useTMContext(TuringMachineContext);
+  const context = useTMContext();
   const [ state ] = context;// const state = context[0];
 
 

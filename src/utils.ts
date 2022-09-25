@@ -21,9 +21,14 @@ export const nextStep = (context: TuringMachineContextType): TuringMachineContex
 
 
     
-
+// produce из immer берет стейт и колбэк для изменения стейта как редьюсер в редаксе
+// draft это клон стейта
     const nextState = produce(state, (draft: TuringMachineStateType) => {
         draft.currentWordIndex = 1;
+
+    //TODO взять символ - найти для него правило - и применить правило 
+
+
     });
 
     setState?.(nextState);

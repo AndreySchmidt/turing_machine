@@ -22,7 +22,7 @@ export const TuringMachineProvider: FC<PropsWithChildren> = ( { children } ) => 
     { word, alphabet, alphabetAlgorithm, algorithm, currentWordIndex: 0, currentAlgorithmRow: 'q1' }
   );
 
-console.log('1');
+// console.log('1');
 
   return (
     <TuringMachineContext.Provider value = { valueToProvide }>

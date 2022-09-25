@@ -1,13 +1,11 @@
 import React, { useCallback } from 'react';
-import { TuringMachineContext } from '../../context';
 import { useTMContext } from '../../hooks/useTMContext';
 import { nextStep } from '../../utils';
 
 
 export const ActionButtons = () => {
 
-  // const context = useContext<TuringMachineContextType>(TuringMachineContext) || [];
-  const context = useTMContext(TuringMachineContext);
+  const context = useTMContext();
   const handleNextStepClick = useCallback(
     () => {
       nextStep(context);
@@ -19,7 +17,6 @@ export const ActionButtons = () => {
   return (
     <div className="App">
       <button onClick={handleNextStepClick}>Next Step</button>
-        ActionButtons
     </div>
   );
 }

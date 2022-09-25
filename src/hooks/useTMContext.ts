@@ -1,6 +1,6 @@
 import React, { useContext } from "react";
-import { TuringMachineContextType } from "../context";
+import { TuringMachineContext, TuringMachineContextType } from "../context";
 
-export const useTMContext = (TuringMachineContext:React.Context<TuringMachineContextType>) => {
+export const useTMContext = () => {
     return  useContext<TuringMachineContextType>(TuringMachineContext) || [];
 }
