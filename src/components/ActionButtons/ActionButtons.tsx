@@ -13,7 +13,7 @@ export const ActionButtons = () => {
       nextStep(context);
       // console.log(e.target);
     },
-    [],
+    [context],
   );
 
   return (
